@@ -15,6 +15,16 @@
             "homepage": "https://github.com/Ph3nol/NotificationPusher/contributors"
         }
     ],
+     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ndougoud/ZendService_Apple_Apns"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ndougoud/ZendService_Google_Gcm"
+        },
+    ],
     "require": {
         "php": ">=5.3.2",
 

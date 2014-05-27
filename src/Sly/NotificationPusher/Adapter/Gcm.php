@@ -84,7 +84,7 @@ class Gcm extends BaseAdapter
      *
      * @return \ZendService\Google\Gcm\Client
      */
-    public function getOpenedClient(ServiceClient $client)
+    /*public function getOpenedClient(ServiceClient $client)
     {
         $client->setApiKey($this->getParameter('apiKey'));
 
@@ -93,6 +93,20 @@ class Gcm extends BaseAdapter
         }
 
         return $client;
+    }*/
+    //FIX!! DO NOT REMOVE!!!
+    public function getOpenedClient(ServiceClient $client)
+    {
+        $client->setApiKey($this->getParameter('apiKey'));
+
+        $c = new \Zend\Http\Client(null, array(
+                                          'adapter' => 'Zend\Http\Client\Adapter\Socket',
+                                          'sslverifypeer' => false
+                                     ));
+
+         $client->setHttpClient($c);
+
+         return $client;
     }
 
     /**
